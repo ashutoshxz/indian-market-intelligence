@@ -1,0 +1,52 @@
+{
+  "name": "indian-market-intelligence",
+  "version": "1.0.0",
+  "description": "AI-powered real-time Indian Market Intelligence Platform",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "build:backend": "npm run build --workspace=backend",
+    "start": "npm run start --workspace=backend",
+    "lint": "npm run lint --workspace=frontend && npm run lint --workspace=backend",
+    "test": "npm run test --workspace=frontend && npm run test --workspace=backend",
+    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up --build",
+    "docker:down": "docker-compose -f infrastructure/docker-compose.yml down",
+    "docker:logs": "docker-compose -f infrastructure/docker-compose.yml logs -f",
+    "docker:reset": "docker-compose -f infrastructure/docker-compose.yml down -v && docker-compose -f infrastructure/docker-compose.yml up --build",
+    "db:migrate": "npm run prisma:migrate --workspace=backend",
+    "db:seed": "node scripts/seed-db.js",
+    "db:studio": "npm run prisma:studio --workspace=backend",
+    "setup": "bash scripts/setup.sh"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/indian-market-intelligence.git"
+  },
+  "keywords": [
+    "indian-markets",
+    "nse",
+    "bse",
+    "market-intelligence",
+    "ai",
+    "fintech",
+    "dashboard",
+    "real-time"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
