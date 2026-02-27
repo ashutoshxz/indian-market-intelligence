@@ -1,0 +1,88 @@
+# ================================
+# Indian Market Intelligence Platform
+# .gitignore
+# ================================
+
+# ---- Environment Variables ----
+.env
+.env.local
+.env.development
+.env.production
+infrastructure/env/*.env
+
+# ---- Node / Frontend / Backend ----
+node_modules/
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+frontend/.vite/
+
+# ---- Python / AI Service / Ingestion ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.pkl
+*.h5
+*.pt
+*.bin
+models/weights/
+
+# ---- Prisma ----
+backend/prisma/migrations/*.db
+
+# ---- Database ----
+*.sqlite
+*.sqlite3
+*.db
+postgres-data/
+
+# ---- Docker ----
+*.dockerignore
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ---- Logs ----
+logs/
+*.log
+*.log.*
+
+# ---- Coverage / Test Artifacts ----
+coverage/
+.nyc_output/
+htmlcov/
+*.cover
+
+# ---- Misc ----
+*.zip
+*.tar.gz
+*.tgz
